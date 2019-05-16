@@ -94,52 +94,51 @@
         </p>
       </div>
     </div>
-</br>
 
       <!-- Project One Row -->
       <div class="featured-text text-center text-lg-left">
-        <div class="col-lg-6">
-              <div class="project-text w-100 my-auto text-center text-lg-left">
+
+            <div class="project-text w-100 my-auto text-center text-lg-left">
                 <h4>What can the Honduran Government do?</h4>
-                <p class="featured-text text-center text-lg-left">Governments can’t prevent citizens from leaving Honduras or peacefully assembling and marching away. Doing so could be a fundamental violation of citizens’ rights and internationally recognized human rights.
+                <p class="featured-text text-center text-lg-left">Governments can’t prevent citizens from leaving Honduras nor prevent them from peacefully assembling and marching away. Doing so could be a fundamental violation of citizens’ rights and internationally recognized human rights.
                   Also, the costs to mobilize any troops to defend blind stops on the borders is very controvelsial, and would be ineffective with substantial costs involved.</p>
                 <hr class="d-none d-lg-block mb-0 ml-0">
-              </div>
-        </div>
+            </div>
+
       </div>
 
 
   <!-- Map Section -->
   <h4 style="text-align: center;"> Select the data you want to see and the Departement you want to know more about</h4>
   <div id="map">
-    <button class="reset" id="reset">Reset View</button>
-  </div>
 
-    </br>
 
-      <div id="mapContainer">  </div>
-
+    <div id="mapContainer">
       <div id="sidebar">
-    <h1>Visualizing Changes in Lower Manhattan</h1>
-    <div class="info-box">
-      <span class='labels-1' id="year-select">Select a year: </span><br>
-      <button type="button" class="Population2015" onclick="myFunction2015()">Population 2015</button>
-      <button type="button" class="Umemployment2014" onclick="myFunction2014()">Unemployed 2014</button>
-      <button type="button" class="Immigrants2015" onclick="myFunctionBack()">Deported Immigrants 2015</button>
+        <h5>Visualizing conditions per department in 2014 and 2015</h5>
+        <div class="info-box">
+          <span class='labels-1' id="year-select">Select for information: </span><br>
+          <button type="button" class="Population2015" onclick="myFunction2015()">Population 2015</button>
+          <button type="button" class="Umemployment2014" onclick="myFunction2014()">Unemployed 2014</button>
+          <button type="button" class="Immigrants2015" onclick="myFunctionBack()">Deported Immigrants 2015</button>
+      </div>
+      <div class="info-box interactive-box" id="interactive-box">
+          <span class="labels-2">Move the mouse over a lot for details</span><br/>
+          <span class="labels">Name of Department: </span><span class="labels" id="depto"></span><br/>
+          <span class="labels">Total population in 2015: </span><span class="labels" id="2015pop"></span><br/>
+          <span class="labels">Total Unemployed in 2014: </span><span class="labels" id="2015migrantestotal"></span><br/>
+          <span class="labels">Total Deported Immigrants: </span><span class="labels" id="2014unemplyment"></span><br/>
+      </div>
+      </div>
+    </div>
   </div>
-  <div class="info-box">
-      <span class="labels-1">Name of Department: </span><span class="labels-1" id="depto-name"></span><br/>
-      <span class="labels-1">Total population in 2015: </span><span class="labels-1" id="total-pop"></span><br/>
-      <span class="labels-1">Total Unemployed in 2014: </span><span class="labels-1" id="total-umem"></span><br/>
-      <span class="labels-1">Total Deported Immigrants: </span><span class="labels-1" id="total-immigrants"></span><br/>
+
+      <!-- <div class="info-box legend">
+        <h3>Legend</h3> -->
+        <!-- We'll programmatically make the legend here -->
+      <!-- </div>
+    </div> -->
   </div>
-  <!-- </div> -->
-  <div class="info-box legend">
-    <h4>Legend</h4>
-    <!-- We'll programmatically make the legend here -->
-  </div>
-</div>
-</div>
 
 
 
