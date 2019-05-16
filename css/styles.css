@@ -1,10 +1,11 @@
 
 #mapContainer {
-  height: 500px;
-  width: 1500px;
+  height: 600px;
+  width: 1300px;
   background: lightgray;
   margin: 0 auto;
 }
+
 #sidebar {
   width: 350px;
   position: absolute;
@@ -12,8 +13,8 @@
   left: 0;
   bottom: 0;
   z-index: 10;
-  padding: 15px;
-  background-color: #94618E;
+  padding: 20 px;
+  background-color:#1CDDEC;
   overflow: scroll;
 }
 
@@ -21,61 +22,37 @@
   top: 2px;
   left: 5px;
   z-index: 10;
-  background-color: #f4f4f4;
+  background-color: #EEEEEE;
   padding: 15px;
   padding-top: 10px;
   margin-bottom:15px
 }
 
 #interactive-box {
-  background-color: #f4f4f4;
+  background-color: #EEEEEE;
 }
 
-
-.legend {
-  line-height: 10px;
-}
-
-.labels {
-  font-size: 8px;
-  font-weight: bold;
-  font-style: italic;
-}
-
-.labels-1 {
-  font-size: 9px;
-  font-weight: bold;
-}
-
-.labels-2 {
-  font-size: 9px;
-  font-weight: bold;
-}
 
 .legend {
   line-height: 18px;
 }
 
 .labels {
-  font-size: 12px;
-  font-weight: bold;
-  font-style: italic;
+  font-size: 14px;
 }
 
 .labels-1 {
-  font-size: 14px;
-  font-weight: bold;
+  font-size: 12px;
 }
 
 .labels-2 {
   font-size: 12px;
-  font-weight: bold;
 }
 
 h3 {
   margin-top: 0px;
   padding-top: 0px;
-  font-size: 1rem;
+  font-size: 25px;
 }
 
 h4 {
@@ -83,18 +60,10 @@ h4 {
   margin-bottom: 6px;
 }
 
-/* button {
-  padding: 3px;
-  border-radius: 2px;
-  background-color: #c3c3c3;
-  text-decoration: underline;
-  font-size: 14px;
-  font-weight: bold;
-  border-color: #c3c3c3;
-} */
+
 
 button {
-  background-color: #E9B000; /* Green */
+  background-color: #1E40E0;
   margin-top: 8px;
   margin-bottom: 12px;
   border: none;
@@ -104,47 +73,18 @@ button {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  font-family: "Palatino";
+  font-family: 'Nunito';
 }
 
 .legend-color-box {
-  height: 15px;
-  width: 15px;
+  height: 17px;
+  width: 17px;
   float: left;
   margin-right: 10px;
 }
 
-/* button {
-  width: 100px;
-  height: 25px;
-  align-content: center;
-} */
+
 
 button:focus {
-  background-color: #E37222;
+  background-color: #E79F48;
 }
-
-
-
-/* #sidebar {
-  width: 300px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  z-index: 10;
-  padding: 15px;
-}
-
-.info-box {
-  width: 300px;
-  position: absolute;
-  top: 25px;
-  left: 25px;
-  z-index: 10;
-  background-color: #c3c3c3;
-  padding: 15px;
-  border-radius: 11px;
-  box-shadow: 1px 1px 7px #525252;
-  margin-bottom:15px
-} */
