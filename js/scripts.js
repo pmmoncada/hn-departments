@@ -18,7 +18,7 @@ map.addControl(new mapboxgl.NavigationControl());
 
 var zoomThreshold = 4;
 //
-map.on('load', function() {
+map.on ('load', function() {
 
     $.getJSON('Data/departmentsHN.geojson', function(data) {
       data.features.map(function(feature) {
@@ -29,32 +29,35 @@ map.on('load', function() {
         console.log(feature.properties.pop)
       })
 
+      $('.Population2015').on('click', function() {
 
-      map.addSource('HNdeptos', {
-          'type': 'geojson',
-          'data': './Data/departmentsHN.geojson',
-      });
+        map.addSource('HNdeptos', {
+            'type': 'geojson',
+            'data': './Data/departmentsHN.geojson',
+        });
 
-      map.addLayer({
-        id: 'HNdeptos',
-        type: 'fill',
-        source: 'HNdeptos',
-        paint: {
-          'fill-opacity': 0.7,
-          'fill-color': [
-              'interpolate',
-              ['linear'],
-              ['get', 'pop'],
-              0, '#f1eef6',
-              70000, '#bdc9e1',
-              100000, '#74a9cf',
-              250000, '#2b8cbe',
-              2000000, '#2b8cbe'
-          ],
-        }
+        map.addLayer({
+          id: 'HNdeptos',
+          type: 'fill',
+          source: 'HNdeptos',
+          paint: {
+            'fill-opacity': 0.7,
+            'fill-color': [
+                'interpolate',
+                ['linear'],
+                ['get', 'pop'],
+                0, '#f1eef6',
+                5000000, '#bdc9e1',
+                1000000, '#74a9cf',
+                2000000, '#2b8cbe'
+            ],
+          }
+        });
       });
     });
-    });
+  });
+
+
 
 
     //   // Create a popup, but don't add it to the map yet.

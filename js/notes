@@ -1,47 +1,334 @@
 
-
-
- },
- {
-   "num": 15,
-   name: "OLANCHO",
-
- },
- {
-   "num": 16,
-   name: "SANTA BARBARA",
-   migrantes: 817,
-   pop: 434896,
-   unemp: 117948
- },
- {
-   "num": 17,
-   name: "VALLE",
-   migrantes: 661,
-   pop: 178561,
-   unemp: 43540
- },
- {
-   "num": 18,
-   name: "YORO",
-   migrantes: 1931,
-   pop: 587375,
-   unemp: 140598
- }
-]
-
-
-
 // a helper function for looking up colors and numbers for Population for each Department
 //Lookup Department names
-var PopLookup = (code) => {
-  console.log(code);
-  switch (code) {
+var PopLookup = (code1) => {
+  console.log(code1);
+  switch (code1) {
+    case 1:
+      return {
+        color: '#c994c7',
+        name: "Atlantida",
+        migrantes: 1607,
+        pop: 449822,
+        unemp: 76206
+      };
+    case 2:
+      return {
+        color: '#e7e1ef',
+        name: 'Colon',
+        migrantes: 1788,
+        pop: 319786,
+        unemp: 71251,
+      };
+    case 3:
+      return {
+        color: '#c994c7',
+        name: 'Comayagua',
+        migrantes: 1163,
+        pop: 511943,
+        unemp: 99510,
+      };
+    case 4:
+      return {
+        color: '#e7e1ef',
+        name: 'Copan',
+        migrantes: 1187,
+        pop: 382722,
+        unemp: 78691,
+      };
+    case 5:
+      return {
+        color: '#dd1c77',
+        name: 'Cortez',
+        migrantes: 3611,
+        pop: 1621762,
+        unemp: 391560,
+      };
+    case 6:
+      return {
+        color: '#c994c7',
+        name: 'Choluteca',
+        migrantes: 946,
+        pop: 447852,
+        unemp: 119563,
+      };
+    case 7:
+      return {
+        color: '#c994c7',
+        name: 'El Paraiso',
+        migrantes: 424,
+        pop: 458472,
+        unemp: 121359,
+      };
+    case 8:
+      return {
+        color: '#dd1c77',
+        name: 'Francisco Morazan',
+        migrantes: 2262,
+        pop: 1553379,
+        unemp: 392996,
+      };
+    case 9:
+      return {
+        color: '#fleef6',
+        name: 'Gracias a Dios',
+        migrantes: 31,
+        pop: 94450,
+        unemp: 0
+      };
+    case 10:
+      return {
+        color: '#e7e1ef',
+        name: 'Intibuca',
+        migrantes: 612,
+        pop: 241568,
+        unemp: 47138
+      };
+    case 11:
+      return {
+        color: '#fleef6',
+        name: 'Islas de la Bahia',
+        migrantes: 162,
+        pop: 65932,
+        unemp: 0
+      };
+    case 12:
+      return {
+        color: '#e7e1ef',
+        name: 'La Paz',
+        migrantes: 208,
+        pop: 206065,
+        unemp: 52679
+      };
+    case 13:
+      return {
+        color: '#e7e1ef',
+        name: 'Lempira',
+        migrantes: 704,
+        pop: 333125,
+        unemp: 63226
+      };
+    case 14:
+      return {
+        color: '#e7e1ef',
+        name: 'Ocotepeque',
+        migrantes: 494,
+        pop: 151516,
+        unemp: 33322
+      };
+    case 15:
+      return {
+        color: '#c994c7',
+        name: 'Olancho',
+        migrantes: 2450,
+        pop: 537306,
+        unemp: 123223,
+      };
+    case 16:
+      return {
+        color: '#c994c7',
+        name: 'Santa Barbara',
+        migrantes: 817,
+        pop: 434896,
+        unemp: 117948
+      };
+    case 17:
+      return {
+        color: '#e7e1ef',
+        name: 'Valle',
+        migrantes: 661,
+        pop: 178561,
+        unemp: 43540
+
+      };
+    case 18:
+      return {
+          color: '#fleef6',
+          name: "Yoro",
+          migrantes: 1931,
+          pop: 587375,
+          unemp: 140598,
+        };
+    default:
+      return {
+        color: '#A9A9A9',
+        name: 'Other',
+        migrantes: 0,
+        pop: 0,
+        unemp: 0,
+      };
+  }
+};
+
+// a helper function for looking up colors and numbers for immigration for each Department
+var immigrationLookup = (code2) => {
+  console.log(code2);
+  switch (code2) {
+    case 1:
+      return {
+        color: '#fc8d59',
+        name: "Atlantida",
+        migrantes: 1607,
+        pop: 449822,
+        unemp: 76206
+      };
+    case 2:
+      return {
+        color: '#fc8d59',
+        name: 'Colon',
+        migrantes: 1788,
+        pop: 319786,
+        unemp: 71251,
+      };
+    case 3:
+      return {
+        color: '#fdcc8a',
+        name: 'Comayagua',
+        migrantes: 1163,
+        pop: 511943,
+        unemp: 99510,
+      };
+    case 4:
+      return {
+        color: '#fdcc8a',
+        name: 'Copan',
+        migrantes: 1187,
+        pop: 382722,
+        unemp: 78691,
+      };
+    case 5:
+      return {
+        color: '#df301f',
+        name: 'Cortez',
+        migrantes: 3611,
+        pop: 1621762,
+        unemp: 391560,
+      };
+    case 6:
+      return {
+        color: '#fdcc8a',
+        name: 'Choluteca',
+        migrantes: 946,
+        pop: 447852,
+        unemp: 119563,
+      };
+    case 7:
+      return {
+        color: '#fef0d9',
+        name: 'El Paraiso',
+        migrantes: 424,
+        pop: 458472,
+        unemp: 121359,
+      };
+    case 8:
+      return {
+        color: '#fc8d59',
+        name: 'Francisco Morazan',
+        migrantes: 2262,
+        pop: 1553379,
+        unemp: 392996,
+      };
+    case 9:
+      return {
+        color: '#fef0d9',
+        name: 'Gracias a Dios',
+        migrantes: 31,
+        pop: 94450,
+        unemp: 0
+      };
+    case 10:
+      return {
+        color: '#fdcc8a',
+        name: 'Intibuca',
+        migrantes: 612,
+        pop: 241568,
+        unemp: 47138
+      };
+    case 11:
+      return {
+        color: '#fef0d9',
+        name: 'Islas de la Bahia',
+        migrantes: 162,
+        pop: 65932,
+        unemp: 0
+      };
+    case 12:
+      return {
+        color: '#fef0d9',
+        name: 'La Paz',
+        migrantes: 208,
+        pop: 206065,
+        unemp: 52679
+      };
+    case 13:
+      return {
+        color: '#fdcc8a',
+        name: 'Lempira',
+        migrantes: 704,
+        pop: 333125,
+        unemp: 63226
+      };
+    case 14:
+      return {
+        color: '#fef0d9',
+        name: 'Ocotepeque',
+        migrantes: 494,
+        pop: 151516,
+        unemp: 33322
+      };
+    case 15:
+      return {
+        color: '#df301f',
+        name: 'Olancho',
+        migrantes: 2450,
+        pop: 537306,
+        unemp: 123223,
+      };
+    case 16:
+      return {
+        color: '#fdcc8a',
+        name: 'Santa Barbara',
+        migrantes: 817,
+        pop: 434896,
+        unemp: 117948
+      };
+    case 17:
+      return {
+        color: '#fdcc8a',
+        name: 'Valle',
+        migrantes: 661,
+        pop: 178561,
+        unemp: 43540
+
+      };
+    case 18:
+      return {
+          color: '#fc8d59',
+          name: "Yoro",
+          migrantes: 1931,
+          pop: 587375,
+          unemp: 140598,
+        };
+    default:
+      return {
+        color: '#A9A9A9',
+        name: 'Other',
+        migrantes: 0,
+        pop: 0,
+        unemp: 0,
+      };
+  }
+};
+
+// a helper function for looking up colors and numbers for the unemployment for each Department
+var PopLookup = (code1) => {
+  console.log(code1);
+  switch (code1) {
     case 1:
       return {
         color: '#A9A9A9',
         name: "Atlantida",
-        migrants: 1607,
+        migrantes: 1607,
         pop: 449822,
         unemp: 76206
       };
@@ -161,17 +448,24 @@ var PopLookup = (code) => {
       return {
         color: '#F5A533',
         name: 'Santa Barbara',
+        migrantes: 817,
+        pop: 434896,
+        unemp: 117948
       };
     case 17:
       return {
         color: '#E0D01E',
         name: 'Valle',
+        migrantes: 661,
+        pop: 178561,
+        unemp: 43540
+
       };
     case 18:
       return {
           color: '#11A9A8',
           name: "Yoro",
-          migrants: 1931,
+          migrantes: 1931,
           pop: 587375,
           unemp: 140598,
         };
@@ -179,211 +473,9 @@ var PopLookup = (code) => {
       return {
         color: '#A9A9A9',
         name: 'Other',
-        migrants: 0,
+        migrantes: 0,
         pop: 0,
         unemp: 0,
-      };
-  }
-};
-
-// a helper function for looking up colors and numbers for immigration for each Department
-var MigDataLookUp = (code) => {
-  switch (code) {
-    case 1:
-      return {
-        color: '#DDA0DD',
-        name: '1 & 2 Family',
-      };
-    case 2:
-      return {
-        color: '#EE82EE',
-        name: 'Multifamily Walk-up',
-      };
-    case 3:
-      return {
-        color: '#9400D3',
-        name: 'Multifamily Elevator',
-      };
-    case 4:
-      return {
-        color: '#9932CC',
-        name: 'Mixed Res. & Commercial',
-      };
-    case 5:
-      return {
-        color: '#ea6661',
-        name: 'Commercial & Office',
-      };
-    case 6:
-      return {
-        color: '#FFFACD',
-        name: 'Industrial & Manufacturing',
-      };
-    case 7:
-      return {
-        color: '#778899',
-        name: 'Transportation & Utility',
-      };
-    case 8:
-      return {
-        color: '#5CA2D1',
-        name: 'Public Facilities & Institutions',
-      };
-    case 9:
-      return {
-        color: '#8ece7c',
-        name: 'Open Space & Outdoor Recreation',
-      };
-    case 10:
-      return {
-        color: '#808080',
-        name: 'Parking Facilities',
-      };
-    case 11:
-      return {
-        color: '#A9A9A9',
-        name: 'Vacant Land',
-      };
-    case 12:
-      return {
-        color: '#A9A9A9',
-        name: 'Other',
-      };
-    case 7:
-      return {
-        color: '#778899',
-        name: 'Transportation & Utility',
-      };
-    case 8:
-      return {
-        color: '#5CA2D1',
-        name: 'Public Facilities & Institutions',
-      };
-    case 9:
-      return {
-        color: '#8ece7c',
-        name: 'Open Space & Outdoor Recreation',
-      };
-    case 10:
-      return {
-        color: '#808080',
-        name: 'Parking Facilities',
-      };
-    case 11:
-      return {
-        color: '#A9A9A9',
-        name: 'Vacant Land',
-      };
-    case 12:
-      return {
-        color: '#A9A9A9',
-        name: 'Other',
-      };
-    default:
-      return {
-        color: '#A9A9A9',
-        name: 'Other',
-      };
-  }
-};
-
-// a helper function for looking up colors and numbers for the unemployment for each Department
-var unempDataLookUp = (code) => {
-  switch (code) {
-    case 1:
-      return {
-        color: '#DDA0DD',
-        name: '1 & 2 Family',
-      };
-    case 2:
-      return {
-        color: '#EE82EE',
-        name: 'Multifamily Walk-up',
-      };
-    case 3:
-      return {
-        color: '#9400D3',
-        name: 'Multifamily Elevator',
-      };
-    case 4:
-      return {
-        color: '#9932CC',
-        name: 'Mixed Res. & Commercial',
-      };
-    case 5:
-      return {
-        color: '#ea6661',
-        name: 'Commercial & Office',
-      };
-    case 6:
-      return {
-        color: '#FFFACD',
-        name: 'Industrial & Manufacturing',
-      };
-    case 7:
-      return {
-        color: '#778899',
-        name: 'Transportation & Utility',
-      };
-    case 8:
-      return {
-        color: '#5CA2D1',
-        name: 'Public Facilities & Institutions',
-      };
-    case 9:
-      return {
-        color: '#8ece7c',
-        name: 'Open Space & Outdoor Recreation',
-      };
-    case 10:
-      return {
-        color: '#808080',
-        name: 'Parking Facilities',
-      };
-    case 11:
-      return {
-        color: '#A9A9A9',
-        name: 'Vacant Land',
-      };
-    case 12:
-      return {
-        color: '#A9A9A9',
-        name: 'Other',
-      };
-    case 7:
-      return {
-        color: '#778899',
-        name: 'Transportation & Utility',
-      };
-    case 8:
-      return {
-        color: '#5CA2D1',
-        name: 'Public Facilities & Institutions',
-      };
-    case 9:
-      return {
-        color: '#8ece7c',
-        name: 'Open Space & Outdoor Recreation',
-      };
-    case 10:
-      return {
-        color: '#808080',
-        name: 'Parking Facilities',
-      };
-    case 11:
-      return {
-        color: '#A9A9A9',
-        name: 'Vacant Land',
-      };
-    case 12:
-      return {
-        color: '#A9A9A9',
-        name: 'Other',
-      };
-    default:
-      return {
-        color: '#A9A9A9',
-        name: 'Other',
       };
   }
 };
