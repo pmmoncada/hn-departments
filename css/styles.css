@@ -1,0 +1,46 @@
+
+#mapContainer {
+  height: 500px;
+  width: 800px;
+  background: lightgray;
+  margin: 0 auto;
+}
+
+#sidebar {
+  width: 300px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+  padding: 15px;
+}
+
+.info-box {
+  width: 300px;
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  z-index: 10;
+  background-color: #c3c3c3;
+  padding: 15px;
+  border-radius: 11px;
+  box-shadow: 1px 1px 7px #525252;
+  margin-bottom:15px
+}
+
+#reset {
+  position: absolute;
+  z-index: 1000;
+  bottom: 11px;
+  left: 56px;
+  background: #FFF;
+  padding: 15px;
+  border-style: solid;
+  border-color: grey;
+  border-radius: 7px;
+}
+
+#myModal {
+  color: dimgrey;
+}
