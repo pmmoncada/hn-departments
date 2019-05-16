@@ -9,16 +9,23 @@
  {
    "num": 2,
    "departamento": "COLON",
-   "2015migrantestotal": 1788, "2015pop": 319786, "2014unemplyment": 71251,
+   "2015migrantestotal": 1788,
+   "2015pop": 319786,
+   "2014unemplyment": 71251,
  },
  {
    "num": 3,
    "departamento": "COMAYAGUA",
-   "2015migrantestotal": 1163, "2015pop": 511943, "2014unemplyment": 99510,
+   "2015migrantestotal": 1163,
+   "2015pop": 511943,
+   "2014unemplyment": 99510,
  },
  {
    "num": 4,
-   "departamento": "COPAN", "2015migrantestotal": 1187, "2015pop": 382722, "2014unemplyment": 78691,
+   "departamento": "COPAN",
+   "2015migrantestotal": 1187,
+   "2015pop": 382722,
+   "2014unemplyment": 78691,
  },
  {
    "num": 5,

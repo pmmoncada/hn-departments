@@ -16,7 +16,7 @@ map.addControl(new mapboxgl.NavigationControl());
 
 
 
-// var zoomThreshold = 4;
+var zoomThreshold = 4;
 //
 map.on('load', function() {
 

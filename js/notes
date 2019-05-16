@@ -1,212 +1,405 @@
-[
- {
-   "num": 1,
-   "departamento": "ATLANTIDA",
-   "migrantes": 1607,
-   "pop": 449822,
-   "unemp": 76206
- },
- {
-   "num": 2,
-   "departamento": "COLON",
-   "migrantes": 1788, "pop": 319786, "unemp": 71251,
- },
- {
-   "num": 3,
-   "departamento": "COMAYAGUA",
-   "migrantes": 1163, "pop": 511943, "unemp": 99510,
- },
- {
-   "num": 4,
-   "departamento": "COPAN", "migrantes": 1187, "pop": 382722, "unemp": 78691,
- },
- {
-   "num": 5,
-   "departamento": "CORTES",
-   "migrantes": 3611, "pop": 1621762, "unemp": 391560,
- },
- {
-   "num": 6,
-   "departamento": "CHOLUTECA",
-   "migrantes": 946, "pop": 447852, "unemp": 119563,
- },
- {
-   "num": 7,
-   "departamento": "EL PARAISO",
-   "migrantes": 424, "pop": 458472, "unemp": 121359,
- },
- {
-   "num": 8,
-   "departamento": "FRANCISCO MORAZAN",
-   "migrantes": 2262, "pop": 1553379, "unemp": 392996,
- },
- {
-   "num": 9,
-   "departamento": "GRACIAS A DIOS",
-   "migrantes": 31, "pop": 94450, "unemp": 0,
- },
- {
-   "num": 10,
-   "departamento": "INTIBUCA",
-   "migrantes": 612, "pop": 241568, "unemp": 47138,
- },
- {
-   "num": 11,
-   "departamento": "ISLAS DE LA BAHIA",
-   "migrantes": 162, "pop": 65932, "unemp": 0,
- },
- {
-   "num": 12,
-   "departamento": "LA PAZ",
-   "migrantes": 208, "pop": 206065, "unemp": 52679,
- },
- {
-   "num": 13,
-   "departamento": "LEMPIRA",
-   "migrantes": 704, "pop": 333125, "unemp": 63226,
- },
- {
-   "num": 14,
-   "departamento": "OCOTEPEQUE",
-   "migrantes": 494, "pop": 151516, "unemp": 33322,
+
+
+
  },
  {
    "num": 15,
-   "departamento": "OLANCHO", "migrantes": 2450, "pop": 537306, "unemp": 123223,
+   name: "OLANCHO",
+
  },
  {
    "num": 16,
-   "departamento": "SANTA BARBARA", "migrantes": 817, "pop": 434896, "unemp": 117948,
+   name: "SANTA BARBARA",
+   migrantes: 817,
+   pop: 434896,
+   unemp: 117948
  },
  {
    "num": 17,
-   "departamento": "VALLE",
-   "migrantes": 661, "pop": 178561,"unemp": 43540,
+   name: "VALLE",
+   migrantes: 661,
+   pop: 178561,
+   unemp: 43540
  },
  {
    "num": 18,
-   "departamento": "YORO",
-   "migrantes": 1931, "pop": 587375, "unemp": 140598,
+   name: "YORO",
+   migrantes: 1931,
+   pop: 587375,
+   unemp: 140598
  }
 ]
 
 
 
-
 // a helper function for looking up colors and numbers for Population for each Department
-var PopDataLookUp = (code) => {
+//Lookup Department names
+var PopLookup = (code) => {
+  console.log(code);
   switch (code) {
     case 1:
       return {
-        color: '#DDA0DD',
-        description: '1 & 2 Family',
+        color: '#A9A9A9',
+        name: "Atlantida",
+        migrants: 1607,
+        pop: 449822,
+        unemp: 76206
       };
     case 2:
       return {
         color: '#EE82EE',
-        description: 'Multifamily Walk-up',
+        name: 'Colon',
+        migrantes: 1788,
+        pop: 319786,
+        unemp: 71251,
       };
     case 3:
       return {
-        color: '#9400D3',
-        description: 'Multifamily Elevator',
+        color: '#5CA2D1',
+        name: 'Comayagua',
+        migrantes: 1163,
+        pop: 511943,
+        unemp: 99510,
       };
     case 4:
       return {
         color: '#9932CC',
-        description: 'Mixed Res. & Commercial',
+        name: 'Copan',
+        migrantes: 1187,
+        pop: 382722,
+        unemp: 78691,
       };
     case 5:
       return {
         color: '#ea6661',
-        description: 'Commercial & Office',
+        name: 'Cortez',
+        migrantes: 3611,
+        pop: 1621762,
+        unemp: 391560,
       };
     case 6:
       return {
         color: '#FFFACD',
-        description: 'Industrial & Manufacturing',
+        name: 'Choluteca',
+        migrantes: 946,
+        pop: 447852,
+        unemp: 119563,
       };
     case 7:
       return {
         color: '#778899',
-        description: 'Transportation & Utility',
+        name: 'El Paraiso',
+        migrantes: 424,
+        pop: 458472,
+        unemp: 121359,
       };
     case 8:
       return {
-        color: '#5CA2D1',
-        description: 'Public Facilities & Institutions',
+        color: '#6BE01E',
+        name: 'Francisco Morazan',
+        migrantes: 2262,
+        pop: 1553379,
+        unemp: 392996,
       };
     case 9:
       return {
         color: '#8ece7c',
-        description: 'Open Space & Outdoor Recreation',
+        name: 'Gracias a Dios',
+        migrantes: 31,
+        pop: 94450,
+        unemp: 0
       };
     case 10:
       return {
-        color: '#808080',
-        description: 'Parking Facilities',
+        color: '#87DDDB',
+        name: 'Intibuca',
+        migrantes: 612,
+        pop: 241568,
+        unemp: 47138
       };
     case 11:
       return {
-        color: '#A9A9A9',
-        description: 'Vacant Land',
+        color: '#FF0400',
+        name: 'Islas de la Bahia',
+        migrantes: 162,
+        pop: 65932,
+        unemp: 0
       };
     case 12:
       return {
+        color: '#E9B3A1',
+        name: 'La Paz',
+        migrantes: 208,
+        pop: 206065,
+        unemp: 52679
+      };
+    case 13:
+      return {
+        color: '#D64091',
+        name: 'Lempira',
+        migrantes: 704,
+        pop: 333125,
+        unemp: 63226
+      };
+    case 14:
+      return {
+        color: '#BEB118',
+        name: 'Ocotepeque',
+        migrantes: 494,
+        pop: 151516,
+        unemp: 33322
+      };
+    case 15:
+      return {
+        color: '#BE5418',
+        name: 'Olancho',
+        migrantes: 2450,
+        pop: 537306,
+        unemp: 123223,
+      };
+    case 16:
+      return {
+        color: '#F5A533',
+        name: 'Santa Barbara',
+      };
+    case 17:
+      return {
+        color: '#E0D01E',
+        name: 'Valle',
+      };
+    case 18:
+      return {
+          color: '#11A9A8',
+          name: "Yoro",
+          migrants: 1931,
+          pop: 587375,
+          unemp: 140598,
+        };
+    default:
+      return {
         color: '#A9A9A9',
-        description: 'Other',
+        name: 'Other',
+        migrants: 0,
+        pop: 0,
+        unemp: 0,
+      };
+  }
+};
+
+// a helper function for looking up colors and numbers for immigration for each Department
+var MigDataLookUp = (code) => {
+  switch (code) {
+    case 1:
+      return {
+        color: '#DDA0DD',
+        name: '1 & 2 Family',
+      };
+    case 2:
+      return {
+        color: '#EE82EE',
+        name: 'Multifamily Walk-up',
+      };
+    case 3:
+      return {
+        color: '#9400D3',
+        name: 'Multifamily Elevator',
+      };
+    case 4:
+      return {
+        color: '#9932CC',
+        name: 'Mixed Res. & Commercial',
+      };
+    case 5:
+      return {
+        color: '#ea6661',
+        name: 'Commercial & Office',
+      };
+    case 6:
+      return {
+        color: '#FFFACD',
+        name: 'Industrial & Manufacturing',
       };
     case 7:
       return {
         color: '#778899',
-        description: 'Transportation & Utility',
+        name: 'Transportation & Utility',
       };
     case 8:
       return {
         color: '#5CA2D1',
-        description: 'Public Facilities & Institutions',
+        name: 'Public Facilities & Institutions',
       };
     case 9:
       return {
         color: '#8ece7c',
-        description: 'Open Space & Outdoor Recreation',
+        name: 'Open Space & Outdoor Recreation',
       };
     case 10:
       return {
         color: '#808080',
-        description: 'Parking Facilities',
+        name: 'Parking Facilities',
       };
     case 11:
       return {
         color: '#A9A9A9',
-        description: 'Vacant Land',
+        name: 'Vacant Land',
       };
     case 12:
       return {
         color: '#A9A9A9',
-        description: 'Other',
+        name: 'Other',
+      };
+    case 7:
+      return {
+        color: '#778899',
+        name: 'Transportation & Utility',
+      };
+    case 8:
+      return {
+        color: '#5CA2D1',
+        name: 'Public Facilities & Institutions',
+      };
+    case 9:
+      return {
+        color: '#8ece7c',
+        name: 'Open Space & Outdoor Recreation',
+      };
+    case 10:
+      return {
+        color: '#808080',
+        name: 'Parking Facilities',
+      };
+    case 11:
+      return {
+        color: '#A9A9A9',
+        name: 'Vacant Land',
+      };
+    case 12:
+      return {
+        color: '#A9A9A9',
+        name: 'Other',
       };
     default:
       return {
         color: '#A9A9A9',
-        description: 'Other',
+        name: 'Other',
+      };
+  }
+};
+
+// a helper function for looking up colors and numbers for the unemployment for each Department
+var unempDataLookUp = (code) => {
+  switch (code) {
+    case 1:
+      return {
+        color: '#DDA0DD',
+        name: '1 & 2 Family',
+      };
+    case 2:
+      return {
+        color: '#EE82EE',
+        name: 'Multifamily Walk-up',
+      };
+    case 3:
+      return {
+        color: '#9400D3',
+        name: 'Multifamily Elevator',
+      };
+    case 4:
+      return {
+        color: '#9932CC',
+        name: 'Mixed Res. & Commercial',
+      };
+    case 5:
+      return {
+        color: '#ea6661',
+        name: 'Commercial & Office',
+      };
+    case 6:
+      return {
+        color: '#FFFACD',
+        name: 'Industrial & Manufacturing',
+      };
+    case 7:
+      return {
+        color: '#778899',
+        name: 'Transportation & Utility',
+      };
+    case 8:
+      return {
+        color: '#5CA2D1',
+        name: 'Public Facilities & Institutions',
+      };
+    case 9:
+      return {
+        color: '#8ece7c',
+        name: 'Open Space & Outdoor Recreation',
+      };
+    case 10:
+      return {
+        color: '#808080',
+        name: 'Parking Facilities',
+      };
+    case 11:
+      return {
+        color: '#A9A9A9',
+        name: 'Vacant Land',
+      };
+    case 12:
+      return {
+        color: '#A9A9A9',
+        name: 'Other',
+      };
+    case 7:
+      return {
+        color: '#778899',
+        name: 'Transportation & Utility',
+      };
+    case 8:
+      return {
+        color: '#5CA2D1',
+        name: 'Public Facilities & Institutions',
+      };
+    case 9:
+      return {
+        color: '#8ece7c',
+        name: 'Open Space & Outdoor Recreation',
+      };
+    case 10:
+      return {
+        color: '#808080',
+        name: 'Parking Facilities',
+      };
+    case 11:
+      return {
+        color: '#A9A9A9',
+        name: 'Vacant Land',
+      };
+    case 12:
+      return {
+        color: '#A9A9A9',
+        name: 'Other',
+      };
+    default:
+      return {
+        color: '#A9A9A9',
+        name: 'Other',
       };
   }
 };
 
 
-
 // use jquery to programmatically create a Legend
-// for numbers 1 - 11, get the land use color and description
+// for numbers 1 - 11, get the land use color and name
 for (var i=1; i<12; i++) {
   // lookup the landuse info for the current iteration
   const landuseInfo = LandUseLookup(i);
 
-  // this is a simple jQuery template, it will append a div to the legend with the color and description
+  // this is a simple jQuery template, it will append a div to the legend with the color and name
   $('.legend').append(`
     <div>
       <div class="legend-color-box" style="background-color:${landuseInfo.color};"></div>
-      ${landuseInfo.description}
+      ${landuseInfo.name}
     </div>
   `)
 }
@@ -357,12 +550,12 @@ map.on('style.load', function() {
       if (lot) {  // if there's a lot under the mouse, do stuff
         map.getCanvas().style.cursor = 'pointer';  // make the cursor a pointer
 
-        // lookup the corresponding description for the land use code
-        var landuseDescription = LandUseLookup(parseInt(lot.properties.landUse2)).description;
+        // lookup the corresponding name for the land use code
+        var landusename = LandUseLookup(parseInt(lot.properties.landUse2)).name;
 
-        // use jquery to display the address and land use description to the sidebar
+        // use jquery to display the address and land use name to the sidebar
         $('#address').text(lot.properties.address);
-        $('#landuse').text(landuseDescription);
+        $('#landuse').text(landusename);
         $('#yearBuilt').text(lot.properties.yearBuilt);
         $('#resiUnits').text(lot.properties.unitsRes);
 
@@ -500,12 +693,12 @@ map.on('style.load', function() {
       if (lot) {  // if there's a lot under the mouse, do stuff
         map.getCanvas().style.cursor = 'pointer';  // make the cursor a pointer
 
-        // lookup the corresponding description for the land use code
-        var landuseDescription = LandUseLookup(parseInt(lot.properties.LandUse)).description;
+        // lookup the corresponding name for the land use code
+        var landusename = LandUseLookup(parseInt(lot.properties.LandUse)).name;
 
-        // use jquery to display the address and land use description to the sidebar
+        // use jquery to display the address and land use name to the sidebar
         $('#address').text(lot.properties.Address);
-        $('#landuse').text(landuseDescription);
+        $('#landuse').text(landusename);
         $('#yearBuilt').text(lot.properties.YearBuilt);
         $('#resiUnits').text(lot.properties.UnitsRes);
 
@@ -642,12 +835,12 @@ map.on('style.load', function() {
       if (lot) {  // if there's a lot under the mouse, do stuff
         map.getCanvas().style.cursor = 'pointer';  // make the cursor a pointer
 
-        // lookup the corresponding description for the land use code
-        var landuseDescription = LandUseLookup(parseInt(lot.properties.LandUse)).description;
+        // lookup the corresponding name for the land use code
+        var landusename = LandUseLookup(parseInt(lot.properties.LandUse)).name;
 
-        // use jquery to display the address and land use description to the sidebar
+        // use jquery to display the address and land use name to the sidebar
         $('#address').text(lot.properties.Address);
-        $('#landuse').text(landuseDescription);
+        $('#landuse').text(landusename);
         $('#yearBuilt').text(lot.properties.YearBuilt);
         $('#resiUnits').text(lot.properties.UnitsRes);
 
