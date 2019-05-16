@@ -1,0 +1,691 @@
+[
+ {
+   "num": 1,
+   "departamento": "ATLANTIDA",
+   "migrantes": 1607,
+   "pop": 449822,
+   "unemp": 76206
+ },
+ {
+   "num": 2,
+   "departamento": "COLON",
+   "migrantes": 1788, "pop": 319786, "unemp": 71251,
+ },
+ {
+   "num": 3,
+   "departamento": "COMAYAGUA",
+   "migrantes": 1163, "pop": 511943, "unemp": 99510,
+ },
+ {
+   "num": 4,
+   "departamento": "COPAN", "migrantes": 1187, "pop": 382722, "unemp": 78691,
+ },
+ {
+   "num": 5,
+   "departamento": "CORTES",
+   "migrantes": 3611, "pop": 1621762, "unemp": 391560,
+ },
+ {
+   "num": 6,
+   "departamento": "CHOLUTECA",
+   "migrantes": 946, "pop": 447852, "unemp": 119563,
+ },
+ {
+   "num": 7,
+   "departamento": "EL PARAISO",
+   "migrantes": 424, "pop": 458472, "unemp": 121359,
+ },
+ {
+   "num": 8,
+   "departamento": "FRANCISCO MORAZAN",
+   "migrantes": 2262, "pop": 1553379, "unemp": 392996,
+ },
+ {
+   "num": 9,
+   "departamento": "GRACIAS A DIOS",
+   "migrantes": 31, "pop": 94450, "unemp": 0,
+ },
+ {
+   "num": 10,
+   "departamento": "INTIBUCA",
+   "migrantes": 612, "pop": 241568, "unemp": 47138,
+ },
+ {
+   "num": 11,
+   "departamento": "ISLAS DE LA BAHIA",
+   "migrantes": 162, "pop": 65932, "unemp": 0,
+ },
+ {
+   "num": 12,
+   "departamento": "LA PAZ",
+   "migrantes": 208, "pop": 206065, "unemp": 52679,
+ },
+ {
+   "num": 13,
+   "departamento": "LEMPIRA",
+   "migrantes": 704, "pop": 333125, "unemp": 63226,
+ },
+ {
+   "num": 14,
+   "departamento": "OCOTEPEQUE",
+   "migrantes": 494, "pop": 151516, "unemp": 33322,
+ },
+ {
+   "num": 15,
+   "departamento": "OLANCHO", "migrantes": 2450, "pop": 537306, "unemp": 123223,
+ },
+ {
+   "num": 16,
+   "departamento": "SANTA BARBARA", "migrantes": 817, "pop": 434896, "unemp": 117948,
+ },
+ {
+   "num": 17,
+   "departamento": "VALLE",
+   "migrantes": 661, "pop": 178561,"unemp": 43540,
+ },
+ {
+   "num": 18,
+   "departamento": "YORO",
+   "migrantes": 1931, "pop": 587375, "unemp": 140598,
+ }
+]
+
+
+
+
+// a helper function for looking up colors and numbers for Population for each Department
+var PopDataLookUp = (code) => {
+  switch (code) {
+    case 1:
+      return {
+        color: '#DDA0DD',
+        description: '1 & 2 Family',
+      };
+    case 2:
+      return {
+        color: '#EE82EE',
+        description: 'Multifamily Walk-up',
+      };
+    case 3:
+      return {
+        color: '#9400D3',
+        description: 'Multifamily Elevator',
+      };
+    case 4:
+      return {
+        color: '#9932CC',
+        description: 'Mixed Res. & Commercial',
+      };
+    case 5:
+      return {
+        color: '#ea6661',
+        description: 'Commercial & Office',
+      };
+    case 6:
+      return {
+        color: '#FFFACD',
+        description: 'Industrial & Manufacturing',
+      };
+    case 7:
+      return {
+        color: '#778899',
+        description: 'Transportation & Utility',
+      };
+    case 8:
+      return {
+        color: '#5CA2D1',
+        description: 'Public Facilities & Institutions',
+      };
+    case 9:
+      return {
+        color: '#8ece7c',
+        description: 'Open Space & Outdoor Recreation',
+      };
+    case 10:
+      return {
+        color: '#808080',
+        description: 'Parking Facilities',
+      };
+    case 11:
+      return {
+        color: '#A9A9A9',
+        description: 'Vacant Land',
+      };
+    case 12:
+      return {
+        color: '#A9A9A9',
+        description: 'Other',
+      };
+    case 7:
+      return {
+        color: '#778899',
+        description: 'Transportation & Utility',
+      };
+    case 8:
+      return {
+        color: '#5CA2D1',
+        description: 'Public Facilities & Institutions',
+      };
+    case 9:
+      return {
+        color: '#8ece7c',
+        description: 'Open Space & Outdoor Recreation',
+      };
+    case 10:
+      return {
+        color: '#808080',
+        description: 'Parking Facilities',
+      };
+    case 11:
+      return {
+        color: '#A9A9A9',
+        description: 'Vacant Land',
+      };
+    case 12:
+      return {
+        color: '#A9A9A9',
+        description: 'Other',
+      };
+    default:
+      return {
+        color: '#A9A9A9',
+        description: 'Other',
+      };
+  }
+};
+
+
+
+// use jquery to programmatically create a Legend
+// for numbers 1 - 11, get the land use color and description
+for (var i=1; i<12; i++) {
+  // lookup the landuse info for the current iteration
+  const landuseInfo = LandUseLookup(i);
+
+  // this is a simple jQuery template, it will append a div to the legend with the color and description
+  $('.legend').append(`
+    <div>
+      <div class="legend-color-box" style="background-color:${landuseInfo.color};"></div>
+      ${landuseInfo.description}
+    </div>
+  `)
+}
+
+// a little object for looking up neighborhood center points
+// var neighborHoodLookup = {
+//   'park-slope': [-73.979702, 40.671199],
+//   'morningside-heights': [-73.962750, 40.809099],
+//   'fidi': [-74.007468, 40.710800],
+//   'greenpoint': [-73.951,40.732169],
+// }
+
+
+// we can't add our own sources and layers until the base style is finished loading
+map.on('style.load', function() {
+  // add a button click listener that will control the map
+  // we have 4 buttons, but can listen for clicks on any of them with just one listener
+  // $('.flyto').on('click', function(e) {
+  //   // pull out the data attribute for the neighborhood using query
+  //   var neighborhood = $(e.target).data('neighborhood');
+  //
+  //   // this is a useful notation for looking up a key in an object using a variable
+  //   var center = neighborHoodLookup[neighborhood];
+  //
+  //   // fly to the neighborhood's center point
+  //   map.flyTo({center: center, zoom: 14});
+  // });
+
+  // let's hack the basemap style a bit
+  // you can use map.getStyle() in the console to inspect the basemap layers
+  map.setPaintProperty('water', 'fill-color', '#a4bee8')
+
+  $('.2002').on('click', function() {
+    map.setLayoutProperty('lower-manhattan-2002-lots-fill', 'visibility', 'visible')
+    map.setLayoutProperty('lower-manhattan-2010-lots-fill', 'visibility', 'none')
+    map.setLayoutProperty('lower-manhattan-2018-lots-fill', 'visibility', 'none')
+  // this sets up the geojson as a source in the map, which I can use to add visual layers
+    map.addSource('lower-manhattan-2002-pluto', {
+      type: 'geojson',
+      data: './data/lower_manhattan_2002.geojson',
+    });
+
+    // add a custom-styled layer for tax lots
+    map.addLayer({
+      id: 'lower-manhattan-2002-lots-fill',
+      type: 'fill',
+      source: 'lower-manhattan-2002-pluto',
+      paint: {
+        'fill-opacity': 0.7,
+        'fill-color': {
+          type: 'categorical',
+          property: 'landUse2',
+          stops: [
+              [
+                '01',
+                LandUseLookup(1).color,
+              ],
+              [
+                "02",
+                LandUseLookup(2).color,
+              ],
+              [
+                "03",
+                LandUseLookup(3).color,
+              ],
+              [
+                "04",
+                LandUseLookup(4).color,
+              ],
+              [
+                "05",
+                LandUseLookup(5).color,
+              ],
+              [
+                "06",
+                LandUseLookup(6).color,
+              ],
+              [
+                "07",
+                LandUseLookup(7).color,
+              ],
+              [
+                "08",
+                LandUseLookup(8).color,
+              ],
+              [
+                "09",
+                LandUseLookup(9).color,
+              ],
+              [
+                "10",
+                LandUseLookup(10).color,
+              ],
+              [
+                "11",
+                LandUseLookup(11).color,
+              ],
+            ]
+          }
+      }
+    }, 'waterway-label')
+
+    // add an outline to the tax lots which is only visible after zoom level 14.8
+    map.addLayer({
+      id: 'lower-manhattan-2002-lots-line',
+      type: 'line',
+      source: 'lower-manhattan-2002-pluto',
+      paint: {
+        'line-opacity': 0.7,
+        'line-color': 'gray',
+        'line-opacity': {
+          stops: [[14, 0], [14.8, 1]], // zoom-dependent opacity, the lines will fade in between zoom level 14 and 14.8
+        }
+      }
+    });
+
+    // add an empty data source, which we will use to highlight the lot the user is hovering over
+    map.addSource('highlight-feature-2002', {
+      type: 'geojson',
+      data: {
+        type: 'FeatureCollection',
+        features: []
+      }
+    })
+
+    // add a layer for the highlighted lot
+    map.addLayer({
+      id: 'highlight-line-2002',
+      type: 'line',
+      source: 'highlight-feature-2002',
+      paint: {
+        'line-width': 3,
+        'line-opacity': 0.9,
+        'line-color': 'black',
+      }
+    });
+
+    // when the mouse moves, do stuff!
+    map.on('mousemove', function (e) {
+      // query for the features under the mouse, but only in the lots layer
+      var features = map.queryRenderedFeatures(e.point, {
+          layers: ['lower-manhattan-2002-lots-fill'],
+      });
+
+      // get the first feature from the array of returned features.
+      var lot = features[0]
+
+      if (lot) {  // if there's a lot under the mouse, do stuff
+        map.getCanvas().style.cursor = 'pointer';  // make the cursor a pointer
+
+        // lookup the corresponding description for the land use code
+        var landuseDescription = LandUseLookup(parseInt(lot.properties.landUse2)).description;
+
+        // use jquery to display the address and land use description to the sidebar
+        $('#address').text(lot.properties.address);
+        $('#landuse').text(landuseDescription);
+        $('#yearBuilt').text(lot.properties.yearBuilt);
+        $('#resiUnits').text(lot.properties.unitsRes);
+
+        // set this lot's polygon feature as the data for the highlight source
+        map.getSource('highlight-feature-2002').setData(lot.geometry);
+      } else {
+        map.getCanvas().style.cursor = 'default'; // make the cursor default
+
+        // reset the highlight source to an empty featurecollection
+        map.getSource('highlight-feature-2002').setData({
+          type: 'FeatureCollection',
+          features: []
+        });
+      }
+    })
+  })
+
+
+  $('.2010').on('click', function() {
+
+    map.setLayoutProperty('lower-manhattan-2010-lots-fill', 'visibility', 'visible')
+    map.setLayoutProperty('lower-manhattan-2002-lots-fill', 'visibility', 'none')
+    map.setLayoutProperty('lower-manhattan-2018-lots-fill', 'visibility', 'none')
+  // this sets up the geojson as a source in the map, which I can use to add visual layers
+    map.addSource('lower-manhattan-2010-pluto', {
+      type: 'geojson',
+      data: './data/lower_manhattan_2010.geojson',
+    });
+
+    // add a custom-styled layer for tax lots
+    map.addLayer({
+      id: 'lower-manhattan-2010-lots-fill',
+      type: 'fill',
+      source: 'lower-manhattan-2010-pluto',
+      paint: {
+        'fill-opacity': 0.7,
+        'fill-color': {
+          type: 'categorical',
+          property: 'LandUse',
+          stops: [
+              [
+                '01',
+                LandUseLookup(1).color,
+              ],
+              [
+                "02",
+                LandUseLookup(2).color,
+              ],
+              [
+                "03",
+                LandUseLookup(3).color,
+              ],
+              [
+                "04",
+                LandUseLookup(4).color,
+              ],
+              [
+                "05",
+                LandUseLookup(5).color,
+              ],
+              [
+                "06",
+                LandUseLookup(6).color,
+              ],
+              [
+                "07",
+                LandUseLookup(7).color,
+              ],
+              [
+                "08",
+                LandUseLookup(8).color,
+              ],
+              [
+                "09",
+                LandUseLookup(9).color,
+              ],
+              [
+                "10",
+                LandUseLookup(10).color,
+              ],
+              [
+                "11",
+                LandUseLookup(11).color,
+              ],
+            ]
+          }
+      }
+    }, 'waterway-label')
+
+    // add an outline to the tax lots which is only visible after zoom level 14.8
+    map.addLayer({
+      id: 'lower-manhattan-2010-lots-line',
+      type: 'line',
+      source: 'lower-manhattan-2010-pluto',
+      paint: {
+        'line-opacity': 0.7,
+        'line-color': 'gray',
+        'line-opacity': {
+          stops: [[14, 0], [14.8, 1]], // zoom-dependent opacity, the lines will fade in between zoom level 14 and 14.8
+        }
+      }
+    });
+
+    // add an empty data source, which we will use to highlight the lot the user is hovering over
+    map.addSource('highlight-feature-2010', {
+      type: 'geojson',
+      data: {
+        type: 'FeatureCollection',
+        features: []
+      }
+    })
+
+    // add a layer for the highlighted lot
+    map.addLayer({
+      id: 'highlight-line-2010',
+      type: 'line',
+      source: 'highlight-feature-2010',
+      paint: {
+        'line-width': 3,
+        'line-opacity': 0.9,
+        'line-color': 'black',
+      }
+    });
+
+    // when the mouse moves, do stuff!
+    map.on('mousemove', function (e) {
+      // query for the features under the mouse, but only in the lots layer
+      var features = map.queryRenderedFeatures(e.point, {
+          layers: ['lower-manhattan-2010-lots-fill'],
+      });
+
+      // get the first feature from the array of returned features.
+      var lot = features[0]
+
+      if (lot) {  // if there's a lot under the mouse, do stuff
+        map.getCanvas().style.cursor = 'pointer';  // make the cursor a pointer
+
+        // lookup the corresponding description for the land use code
+        var landuseDescription = LandUseLookup(parseInt(lot.properties.LandUse)).description;
+
+        // use jquery to display the address and land use description to the sidebar
+        $('#address').text(lot.properties.Address);
+        $('#landuse').text(landuseDescription);
+        $('#yearBuilt').text(lot.properties.YearBuilt);
+        $('#resiUnits').text(lot.properties.UnitsRes);
+
+        // set this lot's polygon feature as the data for the highlight source
+        map.getSource('highlight-feature-2010').setData(lot.geometry);
+      } else {
+        map.getCanvas().style.cursor = 'default'; // make the cursor default
+
+        // reset the highlight source to an empty featurecollection
+        map.getSource('highlight-feature-2010').setData({
+          type: 'FeatureCollection',
+          features: []
+        });
+      }
+    })
+  })
+
+  $('.2018').on('click', function() {
+
+    map.setLayoutProperty('lower-manhattan-2018-lots-fill', 'visibility', 'visible')
+    map.setLayoutProperty('lower-manhattan-2002-lots-fill', 'visibility', 'none')
+    map.setLayoutProperty('lower-manhattan-2010-lots-fill', 'visibility', 'none')
+  // this sets up the geojson as a source in the map, which I can use to add visual layers
+    map.addSource('lower-manhattan-2018-pluto', {
+      type: 'geojson',
+      data: './data/lower_manhattan_2018.geojson',
+    });
+
+    // add a custom-styled layer for tax lots
+    map.addLayer({
+      id: 'lower-manhattan-2018-lots-fill',
+      type: 'fill',
+      source: 'lower-manhattan-2018-pluto',
+      paint: {
+        'fill-opacity': 0.7,
+        'fill-color': {
+          type: 'categorical',
+          property: 'LandUse',
+          stops: [
+              [
+                '01',
+                LandUseLookup(1).color,
+              ],
+              [
+                "02",
+                LandUseLookup(2).color,
+              ],
+              [
+                "03",
+                LandUseLookup(3).color,
+              ],
+              [
+                "04",
+                LandUseLookup(4).color,
+              ],
+              [
+                "05",
+                LandUseLookup(5).color,
+              ],
+              [
+                "06",
+                LandUseLookup(6).color,
+              ],
+              [
+                "07",
+                LandUseLookup(7).color,
+              ],
+              [
+                "08",
+                LandUseLookup(8).color,
+              ],
+              [
+                "09",
+                LandUseLookup(9).color,
+              ],
+              [
+                "10",
+                LandUseLookup(10).color,
+              ],
+              [
+                "11",
+                LandUseLookup(11).color,
+              ],
+            ]
+          }
+      }
+    }, 'waterway-label')
+
+    // add an outline to the tax lots which is only visible after zoom level 14.8
+    map.addLayer({
+      id: 'lower-manhattan-2018-lots-line',
+      type: 'line',
+      source: 'lower-manhattan-2018-pluto',
+      paint: {
+        'line-opacity': 0.7,
+        'line-color': 'gray',
+        'line-opacity': {
+          stops: [[14, 0], [14.8, 1]], // zoom-dependent opacity, the lines will fade in between zoom level 14 and 14.8
+        }
+      }
+    });
+
+    // add an empty data source, which we will use to highlight the lot the user is hovering over
+    map.addSource('highlight-feature-2018', {
+      type: 'geojson',
+      data: {
+        type: 'FeatureCollection',
+        features: []
+      }
+    })
+
+    // add a layer for the highlighted lot
+    map.addLayer({
+      id: 'highlight-line-2018',
+      type: 'line',
+      source: 'highlight-feature-2018',
+      paint: {
+        'line-width': 3,
+        'line-opacity': 0.9,
+        'line-color': 'black',
+      }
+    });
+
+    // when the mouse moves, do stuff!
+    map.on('mousemove', function (e) {
+      // query for the features under the mouse, but only in the lots layer
+      var features = map.queryRenderedFeatures(e.point, {
+          layers: ['lower-manhattan-2018-lots-fill'],
+      });
+
+      // get the first feature from the array of returned features.
+      var lot = features[0]
+
+      if (lot) {  // if there's a lot under the mouse, do stuff
+        map.getCanvas().style.cursor = 'pointer';  // make the cursor a pointer
+
+        // lookup the corresponding description for the land use code
+        var landuseDescription = LandUseLookup(parseInt(lot.properties.LandUse)).description;
+
+        // use jquery to display the address and land use description to the sidebar
+        $('#address').text(lot.properties.Address);
+        $('#landuse').text(landuseDescription);
+        $('#yearBuilt').text(lot.properties.YearBuilt);
+        $('#resiUnits').text(lot.properties.UnitsRes);
+
+        // set this lot's polygon feature as the data for the highlight source
+        map.getSource('highlight-feature-2018').setData(lot.geometry);
+      } else {
+        map.getCanvas().style.cursor = 'default'; // make the cursor default
+
+        // reset the highlight source to an empty featurecollection
+        map.getSource('highlight-feature-2018').setData({
+          type: 'FeatureCollection',
+          features: []
+        });
+      }
+    })
+  })
+})
+
+function myFunction2002() {
+  $('#total-com-area').text("106 million");
+  $('#total-res-area').text("16 million");
+  $('#total-res-units').text("17,450");
+  $('#percent-res').text("12.7%");
+  $('#build-height').text("11.9 floors");
+}
+
+function myFunction2010() {
+  $('#total-com-area').text("105 million");
+  $('#total-res-area').text("33 million");
+  $('#total-res-units').text("30,000");
+  $('#percent-res').text("23.9%");
+  $('#build-height').text("13.1 floors");
+}
+
+function myFunction2018() {
+  $('#total-com-area').text("103 million");
+  $('#total-res-area').text("37 million");
+  $('#total-res-units').text("36,200");
+  $('#percent-res').text("25.9%");
+  $('#build-height').text("14.2 floors");
+}
