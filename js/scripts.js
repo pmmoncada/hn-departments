@@ -38,7 +38,7 @@ map.on('load', function() {
       map.addLayer({
         id: 'HNdeptos',
         type: 'fill',
-        source: 'Hndeptos',
+        source: 'HNdeptos',
         paint: {
           'fill-opacity': 0.7,
           'fill-color': [
