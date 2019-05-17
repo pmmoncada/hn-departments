@@ -6,8 +6,8 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiY3dob25nIiwiYSI6IjAyYzIwYTJjYTVhMzUxZTVkMzdmY
 var map = new mapboxgl.Map({
   container: 'mapContainer',
   style: 'mapbox://styles/mapbox/light-v9',
-  center: [-86.401978,14.716448],
-  zoom: 6.3,
+  center: [-87.967529,14.711135],
+  zoom: 6.5,
 });
 
 // disable map zoom when using scroll
