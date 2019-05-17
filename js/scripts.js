@@ -17,27 +17,31 @@ map.addControl(new mapboxgl.NavigationControl());
 
 
 var zoomThreshold = 4;
-//
+
+// load the colors on the map
 map.on ('load', function() {
 
     $.getJSON('Data/departmentsHN.geojson', function(data) {
       data.features.map(function(feature) {
-        feature.properties.pop = parseInt(feature.properties.pop);
+        feature.properties.pop = parseInt(feature.properties.pop),
+        feature.properties.umemp = parseInt(feature.properties.umemp),
+        feature.properties.migrantes = parseInt(feature.properties.migrantes);
       });
 
       data.features.forEach(function(feature) {
         console.log(feature.properties.pop)
+        console.log(feature.properties.umemp)
+        console.log(feature.properties.migrantes)
       })
 
+      map.addSource('HNdeptos', {
+        'type': 'geojson',
+        'data': './Data/departmentsHN.geojson',
+      });
+
       $('.Population2015').on('click', function() {
-
-        map.addSource('HNdeptos', {
-            'type': 'geojson',
-            'data': './Data/departmentsHN.geojson',
-        });
-
         map.addLayer({
-          id: 'HNdeptos',
+          id: 'po',
           type: 'fill',
           source: 'HNdeptos',
           paint: {
@@ -47,16 +51,66 @@ map.on ('load', function() {
                 ['linear'],
                 ['get', 'pop'],
                 0, '#f1eef6',
-                5000000, '#bdc9e1',
-                1000000, '#74a9cf',
+                250000, '#bdc9e1',
+                500000, '#74a9cf',
+                1000000, '#2b8cbe',
                 2000000, '#2b8cbe'
             ],
           }
         });
       });
+      $('.Population2015').on('click', function() {
+        map.setLayoutProperty('po', 'visibility', 'visible');
+      });
+
+      $('.Umemployment2014').on('click', function() {
+        map.addLayer({
+          id: 'ue',
+          type: 'fill',
+          source: 'HNdeptos',
+          paint: {
+            'fill-opacity': 0.7,
+            'fill-color': [
+                'interpolate',
+                ['linear'],
+                ['get', 'umemp'],
+                0, '#f7f6f7',
+                100000, '#cccccc',
+                200000, '#969696',
+                300000, '#525252',
+                400000, '#252525'
+            ],
+          }
+        });
+        $('.Umemployment2014').on('click', function() {
+          map.setLayoutProperty('im', 'visibility', 'none');
+        });
+        $('.Immigrants2015').on('click', function() {
+          map.addLayer({
+            id: 'ue',
+            type: 'fill',
+            source: 'im',
+            paint: {
+              'fill-opacity': 0.7,
+              'fill-color': [
+                  'interpolate',
+                  ['linear'],
+                  ['get', 'migrantes'],
+                  0, '#f2f0f7',
+                  500, '#cbc9e2',
+                  1200, '#9e9ac8',
+                  2500, '#756bb1',
+                  4000, '#54278f'
+              ],
+            }
+          });
+        $('.Umemployment2014').on('click', function() {
+          map.setLayoutProperty('ue', 'visibility', 'none');
+        });
+      });
     });
   });
-
+});
 
 
 
