@@ -18,63 +18,6 @@ map.addControl(new mapboxgl.NavigationControl());
 
 
 
-// Variables to eventually make a legend
-// var PopColors = [
-//   ['0', '#f1eef6'],
-//   ['250000, '#bdc9e1'],
-//   ['500000', '#74a9cf'],
-//   [ '1000000','#2b8cbe'],
-//   ['2000000', '#06518E'],
-// ];
-//
-// var PopLegend = `<h3>Legend</h3>`;
-// jQuery.each(PopColors, function(i, val) {
-//   PopLegend += `
-//     <div>
-//       <div class="legend-color-box" style="background-color:${val[1]};"></div>
-//       ${val[0]}
-//     </div>
-//   `;
-// })
-//
-//
-// var UnempColors = [
-//   ['0-50000', '#cccccc'],
-//   ['50000-100000', '#969696'],
-//   ['100000-200000','#525252'],
-//   ['200000+', '#252525'],
-// ];
-//
-// var UmempLegend = `<h3>Legend</h3>`;
-// jQuery.each(UnempColors, function(i, val) {
-//   UmempLegend += `
-//     <div>
-//       <div class="legend-color-box" style="background-color:${val[1]};"></div>
-//       ${val[0]}
-//     </div>
-//   `;
-// })
-//
-//
-// var ImmColors =[
-//   ['0-500','#f2f0f7'],
-//   ['500-1200', '#cbc9e2'],
-//   ['1200-2500','#9e9ac8'],
-//   ['2500-4000', '#756bb1'],
-//   ['4000+', '#54278f'],
-// ];
-//
-// var ImmLegend = `<h3>Legend</h3>`;
-// jQuery.each(ImmColors, function(i, val) {
-//   ImmLegend += `
-//     <div>
-//       <div class="legend-color-box" style="background-color:${val[1]};"></div>
-//       ${val[0]}
-//     </div>
-//   `;
-// })
-
-
 //Finish loading base style
 map.on('style.load', function() {
 // set up the geojson as a source in the map
@@ -244,3 +187,63 @@ map.on ('load', function() {
       });
     });
   });
+
+
+  // THE NEXT PIECES OF CODE ARE FOR FUTURE USE
+
+  
+  // Variables to eventually make a legend
+  // var PopColors = [
+  //   ['0', '#f1eef6'],
+  //   ['250000, '#bdc9e1'],
+  //   ['500000', '#74a9cf'],
+  //   [ '1000000','#2b8cbe'],
+  //   ['2000000', '#06518E'],
+  // ];
+  //
+  // var PopLegend = `<h3>Legend</h3>`;
+  // jQuery.each(PopColors, function(i, val) {
+  //   PopLegend += `
+  //     <div>
+  //       <div class="legend-color-box" style="background-color:${val[1]};"></div>
+  //       ${val[0]}
+  //     </div>
+  //   `;
+  // })
+  //
+  //
+  // var UnempColors = [
+  //   ['0-50000', '#cccccc'],
+  //   ['50000-100000', '#969696'],
+  //   ['100000-200000','#525252'],
+  //   ['200000+', '#252525'],
+  // ];
+  //
+  // var UmempLegend = `<h3>Legend</h3>`;
+  // jQuery.each(UnempColors, function(i, val) {
+  //   UmempLegend += `
+  //     <div>
+  //       <div class="legend-color-box" style="background-color:${val[1]};"></div>
+  //       ${val[0]}
+  //     </div>
+  //   `;
+  // })
+  //
+  //
+  // var ImmColors =[
+  //   ['0-500','#f2f0f7'],
+  //   ['500-1200', '#cbc9e2'],
+  //   ['1200-2500','#9e9ac8'],
+  //   ['2500-4000', '#756bb1'],
+  //   ['4000+', '#54278f'],
+  // ];
+  //
+  // var ImmLegend = `<h3>Legend</h3>`;
+  // jQuery.each(ImmColors, function(i, val) {
+  //   ImmLegend += `
+  //     <div>
+  //       <div class="legend-color-box" style="background-color:${val[1]};"></div>
+  //       ${val[0]}
+  //     </div>
+  //   `;
+  // })
